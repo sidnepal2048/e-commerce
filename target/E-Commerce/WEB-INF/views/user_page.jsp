@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>About</title>
+<title></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,14 +16,9 @@
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="/">Home</a>
-			</li>
 			<li class="nav-item">
       			<a class="nav-link" href="/login">Logout</a>
     		</li>
-    		<li class="nav-item">
-      <a class="nav-link" href="/About">About</a>
-    </li>
 		</ul>
 	</nav>
 	

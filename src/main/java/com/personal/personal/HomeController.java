@@ -53,12 +53,4 @@ public class HomeController {
 		return "about";
 	}
 	
-	@RequestMapping("/homepage")
-	@Transactional
-	public String homepage(Model model){
-		return "user_page";
-	}
-	
-	
-	
 }

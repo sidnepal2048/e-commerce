@@ -21,9 +21,7 @@ public class UserDaoImpl implements UserDao{
 		session.saveOrUpdate(user);
 		Authorities authorities = new Authorities();
 		authorities.setAuthority("ROLE_USER");
-		//System.out.println("Authority: " + authorities.getAuthority());
 		authorities.setEmail(user.getEmail());
-		//System.out.println("Email: " + authorities.getEmail());
 		session.saveOrUpdate(authorities);
 		session.flush();
 

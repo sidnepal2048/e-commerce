@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
-	<%-- <link href="<c:url value="/resources/css/lib/carousel.css" />" rel="stylesheet">   --%>
+	<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
 	
      </head>
   <body>
@@ -32,67 +32,40 @@
   </ul>
 </nav>
 
-<%--     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-           <ul class="navbar-nav mr-auto">
- 	         <li><a href="<c:url value="/" /> ">Home</a></li>
-             <li><a href="<c:url value="/about" />">About Us</a></li>
-          </ul>
-          <ul class="nav navbar-nav pull-right">
-                        <c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-                            <li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
-                            <c:if test="${pageContext.request.userPrincipal.name != 'siddharthanepal05@gmail.com'}">
-                            </c:if>
-                            <c:if test="${pageContext.request.userPrincipal.name  == 'siddharthanepal05@gmail.com'}">
-                                <li><a href="<c:url value="/Admin" />">Admin</a></li>
-                            </c:if>
-                        </c:if>
-                        <c:if test="${pageContext.request.userPrincipal.name  == null}">
-                        	<a href="<c:url value="/" />">Home</a>
-                        	<a href="<c:url value="/register" />">Register</a>
-                        </c:if>
-                    </ul>
-           
-        </div>
-      </nav>
-    </header> --%>
-<div class="container-wrapper">
+<!-- <div class="container-wrapper">
     <div class="login-container">
-        <div id="login-box">
+        <div id="login-box"> -->
 
-            <h2>Login with Username and Password</h2>
+            <h2 style="text-align:center">Login with Email and Password</h2>
 
             <c:if test="${not empty msg}">
                 <div class="msg">${msg}</div>
             </c:if>
 
-            <form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
+            <form class="form-signin" name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
                 <c:if test="${not empty error}">
                     <div class="error" style="color: #ff0000;">${error}</div>
                 </c:if>
-                <div class="form-group">
+                <div class="form-label-group">
                     <label for="email">Email: </label>
-                    <input type="text" id="email" name="email" class="form-control" />
+                    <input type="text" id="email" name="email" class="form-control" required/>
                 </div>
-                <div class="form-group">
+                <div class="form-label-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" />
+                    <input type="password" id="password" name="password" class="form-control" required/>
                 </div>
 
                 <input type="submit" value="Submit" class="btn btn-default">
 
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             </form>
-
+<!-- 
         </div>
     </div>
-</div>
+</div> -->
      <footer class="container">
         <p class="float-right"></p>
-        <p>&copy; 2017-2018 Company, Inc. &middot;</p>
+        <p style="text-align:center">&copy; 2019-2020 Company, Inc.</p>
       </footer>
     
 

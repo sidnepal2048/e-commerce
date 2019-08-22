@@ -28,50 +28,52 @@
     </li>
 		</ul>
 	</nav>
-	<div class="container-wrapper">
+	      
+	<h3 class="mb-3" style="text-align: center;">User Information</h3>
+	<div class="bg-light">
 		<div class="container">
-			<div class="page-header">
-				<h1>Register user</h1>
-
-				<p class="lead">Please fill in your information below:</p>
-			</div>
-
-			<form:form action="${pageContext.request.contextPath}/register"
-				method="post" commandName="user">
-
-				<h3>Basic Info</h3>
-				<div class="form-group">
-					<label for="fname">First Name</label>
+			<form:form action="${pageContext.request.contextPath}/register" method="post" commandName="user">
+				<br>
+				
+				<div class="row">
+					<div class="col-md-6 mb-3">
+					<label for="fname">First Name:</label>
 					<%-- <form:errors path="customerName" cssStyle="color: #ff0000" /> --%>
-					<form:input path="fname" id="fname" name="fname" class="form-Control" />
+					<form:input path="fname" id="fname" name="fname" class="form-Control" required="required" />
+				</div>
+				
 
+				<div class="col-md-6 mb-3">
+					<label for="lname">Last Name:</label>
+					<form:input path="lname" id="lname" name="lname" class="form-Control" required="required" />
 				</div>
-
-				<div class="form-group">
-					<label for="lname">Last Name</label>
-					<form:input path="lname" id="lname"
-						class="form-Control" />
 				</div>
-				<div class="form-group">
-					<label for="phone">Phone No.</label>
-					<form:input path="phone" id="phone"
-						class="form-Control" />
+				
+				<div class="mb-3">
+					<label for="phone">Phone No.:</label>
+					<div class="input-group">
+					<form:input path="phone" id="phone" class="form-Control" required="required" />
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<form:input path="email" id="email"
-						class="form-Control" />
+				
+				<div class="mb-3">
+					<label for="phone">Email:</label>
+					<div class="input-group">
+					<form:input path="email" id="email" class="form-Control" required="required" />
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="password">Password</label>
-					<form:input path="password" id="password"
-						class="form-Control" />
+				
+				<div class="mb-3">
+					<label for="password">Password:</label>
+					<div class="input-group">
+					<form:input path="password" id="password" class="form-Control" required="required" />
+						</div>
 				</div>
 				
 			
-
-				<input type="submit" value="submit" class="btn btn-default">
-				<a href="<c:url value="/" />" class="btn btn-default">Cancel</a>
+			<hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+				<a href="<c:url value="/" />" class="btn btn-primary btn-lg btn-block">Cancel</a>
 			</form:form>
 		</div>
 	</div>

@@ -4,6 +4,10 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +55,18 @@ public class HomeController {
 		User user = new User();
 		model.addAttribute("user", user);
 		return "about";
+	}
+	
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public String access_denied(Model model) {
+		  Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		  if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();	
+			String name = userDetail.getUsername();
+			System.out.println("name: " + name);
+			model.addAttribute("name", name);
+		  }
+		return "403";
 	}
 	
 }

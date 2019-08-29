@@ -29,7 +29,7 @@
 		</ul>
 	</nav>
 	      
-	<h3 class="mb-3" style="text-align: center;">User Information</h3>
+	<h3 class="mb-3" style="text-align: center;">Register User</h3>
 	<div class="bg-light">
 		<div class="container">
 			<form:form action="${pageContext.request.contextPath}/register" method="post" commandName="user">
@@ -69,7 +69,68 @@
 					<form:input path="password" id="password" class="form-Control" required="required" />
 						</div>
 				</div>
-				
+				<p>Billing Address</p>
+				<div class="col-md-6 mb-3">
+					<label for="address">Address:</label>
+					<div class="input-group">
+					<form:input path="billingAddress.address" id="billingAddress.address" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="city">City:</label>
+					<div class="input-group">
+					<form:input path="billingAddress.city" id="billingAddress.city" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="state">State:</label>
+					<div class="input-group">
+					<form:input path="billingAddress.state" id="billingAddress.state" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="country">Country:</label>
+					<div class="input-group">
+					<form:input path="billingAddress.country" id="billingAddress.country" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="zip">Zip:</label>
+					<div class="input-group">
+					<form:input path="billingAddress.zip" id="billingAddress.zip" class="form-Control" required="required" />
+					</div>
+				</div>
+				<p>Shipping Address</p>
+				<div class="col-md-6 mb-3">
+					<label for="address">Address:</label>
+					<div class="input-group">
+					<form:input path="shippingAddress.address" id="shippingAddress.address" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="city">City:</label>
+					<div class="input-group">
+					<form:input path="shippingAddress.city" id="shippingAddress.city" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="state">State:</label>
+					<div class="input-group">
+					<form:input path="shippingAddress.state" id="shippingAddress.state" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="shippingAddress.country">Country:</label>
+					<div class="input-group">
+					<form:input path="shippingAddress.country" id="shippingAddress.country" class="form-Control" required="required" />
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="zip">Zip:</label>
+					<div class="input-group">
+					<form:input path="shippingAddress.zip" id="shippingAddress.zip" class="form-Control" required="required" />
+					</div>
+				</div>
 			
 			<hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>

@@ -44,7 +44,6 @@
 			</li>
 		</ul>
 	</nav>
-
 		<div class="container"
 		style="width: 1145px; margin-top: 20px; margin-bottom: 180px;">
 		<div style="margin-bottom: 30px">
@@ -52,14 +51,12 @@
 				<br> List of Product Purchased
 				<div>
 
-					<a class="btn btn-danger pull-left"
-						style="margin-top: 15px; margin-left: 20px" href="/cart/removeAllItem/${cartId}">Clear Cart
+					<a href="/cart/removeAllItem/${cartId}">Clear Cart
 					</a>
 				</div>
 				<div>
 					<c:url value="/order/${cartId}" var="url1"></c:url>
-					<a href="${url1}" class="btn btn-danger pull-left"
-						style="margin-top: 15px; margin-left: 20px"> <span
+					<a href="${url1}"><span
 						class="glyphicon glyphicon-shipping-cart"> </span>Check Out
 					</a>
 				</div>
@@ -80,9 +77,8 @@
 							<td>${temp.getQuality()}</td>
 							<td>${temp.getProduct().getProductPrice()}</td>
 							<td>${temp.getPrice()}</td>
-							<td><a href="/cart/removeCartItem/${cartItemId}" class="btn btn-danger"
-								style="margin-top: 0px;"><span
-									class="glyphicon glyphicon-trash"></span>remove</a></td>
+							<td><a href="/cart/removeCartItem/${cartItemId}">
+							<i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </c:forEach>
 					
 					</tbody>

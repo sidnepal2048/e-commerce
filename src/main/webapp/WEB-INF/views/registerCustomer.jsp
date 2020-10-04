@@ -6,11 +6,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>About</title>
+<title>Register Customer</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 </head>
 <body>
 
@@ -30,114 +31,113 @@
 	</nav>
 	      
 	<h3 class="mb-3" style="text-align: center;">Register User</h3>
-	<div class="bg-light">
-		<div class="container">
-			<form:form action="${pageContext.request.contextPath}/register" method="post" commandName="user">
-				<br>
-				
-				<div class="row">
-					<div class="col-md-6 mb-3">
-					<label for="fname">First Name:</label>
-					<%-- <form:errors path="customerName" cssStyle="color: #ff0000" /> --%>
-					<form:input path="fname" id="fname" name="fname" class="form-Control" required="required" />
-				</div>
-				
-
-				<div class="col-md-6 mb-3">
-					<label for="lname">Last Name:</label>
-					<form:input path="lname" id="lname" name="lname" class="form-Control" required="required" />
-				</div>
-				</div>
-				
-				<div class="mb-3">
-					<label for="phone">Phone No.:</label>
-					<div class="input-group">
-					<form:input path="phone" id="phone" class="form-Control" required="required" />
-					</div>
-				</div>
-				
-				<div class="mb-3">
-					<label for="phone">Email:</label>
-					<div class="input-group">
-					<form:input path="email" id="email" class="form-Control" required="required" />
-					</div>
-				</div>
-				
-				<div class="mb-3">
-					<label for="password">Password:</label>
-					<div class="input-group">
-					<form:input path="password" id="password" class="form-Control" required="required" />
+<div id="container">
+	<form:form action="${pageContext.request.contextPath}/register" method="post" commandName="user">
+		<div class="row ml-2 mr-2 border-blue-bottom">
+				<div class="col-6">
+					<h6>Personal Information</h6>
+					<div class="form-group row">
+						<label for="fname" class="col-md-4 col-form-label">First Name:</label>
+						<div class="col-md-5">
+							<form:input path="fname" id="fname" name="fname" class="form-Control" required="required" />
 						</div>
+					</div>
+					<div class="form-group row">
+						<label for="lname" class="col-md-4 col-form-label">Last Name:</label>
+						<div class="col-md-5">
+							<form:input path="lname" id="lname" name="lname" class="form-Control" required="required" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="phone" class="col-md-4 col-form-label">Phone No.:</label>
+						<div class="col-md-5">
+							<form:input path="phone" id="phone" class="form-Control" required="required" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="email" class="col-md-4 col-form-label">Email:</label>
+						<div class="col-md-5">
+							<form:input path="email" id="email" class="form-Control" required="required" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="password" class="col-md-4 col-form-label">Password:</label>
+						<div class="col-md-5">
+							<form:input path="password" id="password" class="form-Control" required="required" />
+						</div>
+					</div>
 				</div>
-				<p>Billing Address</p>
-				<div class="col-md-6 mb-3">
-					<label for="address">Address:</label>
-					<div class="input-group">
+		</div>
+	<div class="row ml-2 mr-2 mt-2">
+		<div class="col border-blue-right">
+			<h6>Billing Address</h6>
+			<div class="form-group row">
+				<label for="billingAddress.address" class="col-md-4 col-form-label">Address:</label>
+				<div class="col-md-5">
 					<form:input path="billingAddress.address" id="billingAddress.address" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="city">City:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="billingAddress.city" class="col-md-4 col-form-label">City:</label>
+				<div class="col-md-5">
 					<form:input path="billingAddress.city" id="billingAddress.city" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="state">State:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="billingAddress.state" class="col-md-4 col-form-label">State:</label>
+				<div class="col-md-5">
 					<form:input path="billingAddress.state" id="billingAddress.state" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="country">Country:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="billingAddress.country" class="col-md-4 col-form-label">Country:</label>
+				<div class="col-md-5">
 					<form:input path="billingAddress.country" id="billingAddress.country" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="zip">Zip:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="billingAddress.zip" class="col-md-4 col-form-label">Zip:</label>
+				<div class="col-md-5">
 					<form:input path="billingAddress.zip" id="billingAddress.zip" class="form-Control" required="required" />
-					</div>
 				</div>
-				<p>Shipping Address</p>
-				<div class="col-md-6 mb-3">
-					<label for="address">Address:</label>
-					<div class="input-group">
+			</div>
+		</div>
+
+		<div class="col">
+			<h6>Shipping Address</h6>
+			<div class="form-group row">
+				<label for="shippingAddress.address" class="col-md-4 col-form-label">Address:</label>
+				<div class="col-md-5">
 					<form:input path="shippingAddress.address" id="shippingAddress.address" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="city">City:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="shippingAddress.city" class="col-md-4 col-form-label">City:</label>
+				<div class="col-md-5">
 					<form:input path="shippingAddress.city" id="shippingAddress.city" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="state">State:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="shippingAddress.state" class="col-md-4 col-form-label">State:</label>
+				<div class="col-md-5">
 					<form:input path="shippingAddress.state" id="shippingAddress.state" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="shippingAddress.country">Country:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="shippingAddress.country" class="col-md-4 col-form-label">Country:</label>
+				<div class="col-md-5">
 					<form:input path="shippingAddress.country" id="shippingAddress.country" class="form-Control" required="required" />
-					</div>
 				</div>
-				<div class="col-md-6 mb-3">
-					<label for="zip">Zip:</label>
-					<div class="input-group">
+			</div>
+			<div class="form-group row">
+				<label for="shippingAddress.zip" class="col-md-4 col-form-label">Zip:</label>
+				<div class="col-md-5">
 					<form:input path="shippingAddress.zip" id="shippingAddress.zip" class="form-Control" required="required" />
-					</div>
 				</div>
-			
-			<hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
-				<a href="<c:url value="/" />" class="btn btn-primary btn-lg btn-block">Cancel</a>
-			</form:form>
+			</div>
 		</div>
 	</div>
-
+	</form:form>
+</div>
 </body>
 </html>

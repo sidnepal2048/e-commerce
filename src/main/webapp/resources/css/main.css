@@ -1,0 +1,76 @@
+.cc-btn{
+    background-color: #0086AC;
+    padding: 6px;
+    font-size: 12px;
+    font-family: helvetica, arial, verdana, sans-serif;
+    color:#FFFFFF;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+}
+
+.btn:hover {
+    background-color: #016586;
+    color: #ffffff;
+}
+
+hr.blue {
+    border-top: 1px solid dodgerblue;
+}
+
+/* Make module separators blue */
+.border-blue-right  { border-right: 1px solid #94b6d1; }
+.border-blue-left  { border-left: 1px solid #94b6d1; }
+.border-blue-top  { border-top: 1px solid #94b6d1; }
+.border-blue-bottom  { border-bottom: 1px solid #94b6d1; }
+
+.required:after {
+    content: "*";
+    color: #e32;
+    display: inline;
+    margin-left:5px;
+}
+
+#error-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+    margin-bottom: 2px;
+}
+
+#error-message{
+    padding: 10px;
+    width: 100%;
+}
+
+#display-error{
+    display: none;
+}
+
+.left_nav {
+    border: 1px solid #405689;
+    font-family: rockwell;
+    font-size: 15px;
+    background-color: #fff;
+}
+.left_nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #001d61;
+    font-family: Rockwell;
+    line-height: 30px;
+}
+.left_nav li {
+    display: block;
+    margin-top: 0px;
+    padding: 5px;
+    padding-left: 10px;
+    color: #001d61;
+    border-bottom: 1px solid #001d61;
+}
+.left_nav li.current {
+    color: #fff;
+    background-color: #405688;
+}

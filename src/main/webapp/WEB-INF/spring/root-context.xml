@@ -62,7 +62,7 @@
         
         <security:form-login
             login-page="/login"
-            default-target-url="/homepage"
+            default-target-url="/success"
             login-processing-url="/j_spring_security_check" 
             
             authentication-failure-url="/login?error"

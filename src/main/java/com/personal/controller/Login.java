@@ -1,5 +1,6 @@
 package com.personal.controller;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -56,6 +58,24 @@ public class Login{
         return "redirect:/home";
       }
     }
+
+    @RequestMapping("/success")
+	@Transactional
+	public String success() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+		String redirectUrl = null;
+		for (GrantedAuthority grantedAuthority : authorities) {
+			System.out.println("role " + grantedAuthority.getAuthority());
+			if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
+				redirectUrl = "redirect:/homepage";
+			} else {
+				redirectUrl = "redirect:/Admin";
+			}
+			break;
+		}
+		return redirectUrl;
+	}
 	
 	@RequestMapping("/homepage")
 	@Transactional

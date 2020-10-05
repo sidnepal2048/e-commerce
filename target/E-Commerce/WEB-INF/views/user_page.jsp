@@ -2,6 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,23 +25,26 @@
 		<ul class="navbar-nav">
 			<li class="nav-item active"><a class="nav-link" href="/SignOut">Logout</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="/Admin">Admin</a>
+			<li class="nav-item">
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <a class="nav-link" href="/Admin">Admin</a>
+				</sec:authorize>
 			</li>
 			<!-- Dropdown -->
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="" id="navbardrop"
 				data-toggle="dropdown">Account & List</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/account">Your Account</a> <a
-						class="dropdown-item" href="#">Your Order</a>
-				</div></li>
-				<li><c:if test="${pageContext.request.userPrincipal.name != null}">
-                            <li style="font-size:35px;text-align:left;color:white;"><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-                            </c:if>
-                          </li>
-                          <li class="nav-item"><a class="nav-link" href="/cart/getCartId/${cartId}">
-							<i class='fas fa-cart-plus' style='font-size:30px;color:black;text-align:right;'></i>
-                         </a>
+					<a class="dropdown-item" href="/account">Your Account</a>
+					<a class="dropdown-item" href="#">Your Order</a>
+				</div>
+			</li>
+			<li><c:if test="${pageContext.request.userPrincipal.name != null}">
+				<li style="font-size:35px;text-align:left;color:white;"><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
+			</c:if>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="/cart/getCartId/${cartId}">
+				<i class='fas fa-cart-plus' style='font-size:30px;color:black;text-align:right;'></i></a>
 			</li>
 		</ul>
 	</nav>

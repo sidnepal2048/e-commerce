@@ -2,6 +2,7 @@ package com.personal.controller;
 
 import java.util.List;
 
+import com.personal.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
@@ -23,11 +24,6 @@ import com.personal.entity.CartItem;
 import com.personal.entity.Product;
 import com.personal.entity.ShippingAddress;
 import com.personal.entity.User;
-import com.personal.service.CartItemService;
-import com.personal.service.CartService;
-import com.personal.service.EmailService;
-import com.personal.service.ProductService;
-import com.personal.service.UserService;
 
 @Controller
 public class UserController {
@@ -46,6 +42,12 @@ public class UserController {
 	
 	@Autowired
 	private CartItemService cartItemService;
+
+	@Autowired
+	private CountryService countryService;
+
+	@Autowired
+	private StateService stateService;
 	
 	@RequestMapping(value= "/register", method = RequestMethod.GET)
 	@Transactional
@@ -56,6 +58,8 @@ public class UserController {
 		user.setShippingAddress(sa);
 		user.setBillingAddress(ba);
 		model.addAttribute("user", user);
+		model.addAttribute("states", stateService.getAllState());
+		model.addAttribute("countries", countryService.getAllCountry());
 		return "registerCustomer";
 	}
 

@@ -88,13 +88,21 @@
 			<div class="form-group row">
 				<label for="billingAddress.state" class="col-md-4 col-form-label required">State:</label>
 				<div class="col-md-5">
-					<form:input path="billingAddress.state" id="billingAddress.state" class="form-Control" required="required" />
+					<form:select path="billingAddress.state" id="billingAddress.state" class="form-Control" required="required">
+						<c:forEach items="${states}" var="stateslist">
+							<form:option value="${stateslist.name}">${stateslist.name}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="billingAddress.country" class="col-md-4 col-form-label required">Country:</label>
 				<div class="col-md-5">
-					<form:input path="billingAddress.country" id="billingAddress.country" class="form-Control" required="required" />
+					<form:select path="billingAddress.country" id="billingAddress.country" class="form-Control" required="required">
+						<c:forEach items="${countries}" var="countrylist">
+						<form:option value="${countrylist.name}">${countrylist.name}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -122,13 +130,21 @@
 			<div class="form-group row">
 				<label for="shippingAddress.state" class="col-md-4 col-form-label required">State:</label>
 				<div class="col-md-5">
-					<form:input path="shippingAddress.state" id="shippingAddress.state" class="form-Control" required="required" />
+					<form:select path="shippingAddress.state" id="shippingAddress.state" class="form-Control" required="required">
+						<c:forEach items="${states}" var="stateslist">
+							<form:option value="${stateslist.name}">${stateslist.name}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="shippingAddress.country" class="col-md-4 col-form-label required">Country:</label>
 				<div class="col-md-5">
-					<form:input path="shippingAddress.country" id="shippingAddress.country" class="form-Control" required="required" />
+					<form:select path="shippingAddress.country" id="shippingAddress.country" class="form-Control" required="required">
+						<c:forEach items="${countries}" var="countrylist">
+							<form:option value="${countrylist.name}">${countrylist.name}</form:option>
+						</c:forEach>
+					</form:select>
 				</div>
 			</div>
 			<div class="form-group row">

@@ -17,7 +17,7 @@ public class BillingAddress implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int billindAddressId;
+	private int billingAddressId;
 	private String address;
 	private String city;
 	private String state;
@@ -27,12 +27,12 @@ public class BillingAddress implements Serializable {
 	@OneToOne(mappedBy = "billingAddress")
 	private User user;
 
-	public int getBillindAddressId() {
-		return billindAddressId;
+	public int getBillingAddressId() {
+		return billingAddressId;
 	}
 
-	public void setBillindAddressId(int billindAddressId) {
-		this.billindAddressId = billindAddressId;
+	public void setBillingAddressId(int billingAddressId) {
+		this.billingAddressId = billingAddressId;
 	}
 
 	public String getAddress() {

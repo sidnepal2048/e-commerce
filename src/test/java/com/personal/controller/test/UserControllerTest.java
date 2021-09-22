@@ -78,4 +78,5 @@ public class UserControllerTest {
 
         verify(userDao).addUser(any(User.class));
     }
+
 }

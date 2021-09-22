@@ -38,7 +38,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/Admin/addProduct", method=RequestMethod.POST)
-	public String addProductPost(@ModelAttribute("product") Product product, BindingResult result, Model model, HttpServletRequest request){
+	public String addProductPost(@ModelAttribute("product") Product product, BindingResult result){
 		if(result.hasErrors()){
 			return "admin_home";
 		}

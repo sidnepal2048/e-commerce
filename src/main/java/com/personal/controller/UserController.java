@@ -58,8 +58,8 @@ public class UserController {
 		user.setShippingAddress(sa);
 		user.setBillingAddress(ba);
 		model.addAttribute("user", user);
-		model.addAttribute("states", stateService.getAllState());
-		model.addAttribute("countries", countryService.getAllCountry());
+		model.addAttribute("states", "IN");
+		model.addAttribute("countries", "US");
 		return "registerCustomer";
 	}
 

@@ -1,11 +1,12 @@
 package com.personal.dao;
 
+import com.personal.entity.User;
 import java.util.List;
 
-import com.personal.entity.User;
-
 public interface UserDao {
-	void addUser(User user);
-	List<User> getAllUser();
-	User getUserByEmail(String email);
+  void addUser(User user);
+
+  List<User> getAllUser();
+
+  User getUserByEmail(String email);
 }

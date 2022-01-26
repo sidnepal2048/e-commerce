@@ -1,46 +1,46 @@
 package com.personal.entity;
 
+import javax.persistence.*;
 import org.hibernate.annotations.Immutable;
 
-import javax.persistence.*;
-
-@Entity(name="CCTL_STATE")
+@Entity(name = "CCTL_STATE")
 @Table(name = "CCTL_STATE")
 @Immutable
 public class State {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "retired")
-    private int retired;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id", updatable = false, nullable = false)
+  private Long id;
 
-    public State() {
-    }
+  @Column(name = "name")
+  private String name;
 
-    public Long getId() {
-        return id;
-    }
+  @Column(name = "retired")
+  private int retired;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public State() {}
 
-    public String getName() {
-        return name;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public int getRetired() {
-        return retired;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setRetired(int retired) {
-        this.retired = retired;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getRetired() {
+    return retired;
+  }
+
+  public void setRetired(int retired) {
+    this.retired = retired;
+  }
 }

@@ -1,7 +1,6 @@
 package com.personal.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,67 +13,65 @@ import javax.persistence.Table;
 @Table(name = "user_order")
 public class UserOrder implements Serializable {
 
-	private static final long serialVersionUID = -6571020025726257848L;
+  private static final long serialVersionUID = -6571020025726257848L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int orderId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int orderId;
 
-	@OneToOne
-	@JoinColumn(name = "cartId")
-	private Cart cart;
+  @OneToOne
+  @JoinColumn(name = "cartId")
+  private Cart cart;
 
-	@OneToOne
-	@JoinColumn(name = "id")
-	private User user;
+  @OneToOne
+  @JoinColumn(name = "id")
+  private User user;
 
-	@OneToOne
-	@JoinColumn(name = "shippingAddressId")
-	private ShippingAddress shippingAddress;
+  @OneToOne
+  @JoinColumn(name = "shippingAddressId")
+  private ShippingAddress shippingAddress;
 
-	@OneToOne
-	@JoinColumn(name = "billingAddressId")
-	private BillingAddress billingAddress;
+  @OneToOne
+  @JoinColumn(name = "billingAddressId")
+  private BillingAddress billingAddress;
 
-	public int getOrderId() {
-		return orderId;
-	}
+  public int getOrderId() {
+    return orderId;
+  }
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
+  public void setOrderId(int orderId) {
+    this.orderId = orderId;
+  }
 
-	public Cart getCart() {
-		return cart;
-	}
+  public Cart getCart() {
+    return cart;
+  }
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
+  public void setCart(Cart cart) {
+    this.cart = cart;
+  }
 
-	public User getUser() {
-		return user;
-	}
+  public User getUser() {
+    return user;
+  }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+  public void setUser(User user) {
+    this.user = user;
+  }
 
-	public ShippingAddress getShippingAddress() {
-		return shippingAddress;
-	}
+  public ShippingAddress getShippingAddress() {
+    return shippingAddress;
+  }
 
-	public void setShippingAddress(ShippingAddress shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
+  public void setShippingAddress(ShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
 
-	public BillingAddress getBillingAddress() {
-		return billingAddress;
-	}
+  public BillingAddress getBillingAddress() {
+    return billingAddress;
+  }
 
-	public void setBillingAddress(BillingAddress billingAddress) {
-		this.billingAddress = billingAddress;
-	}
-
-	
+  public void setBillingAddress(BillingAddress billingAddress) {
+    this.billingAddress = billingAddress;
+  }
 }

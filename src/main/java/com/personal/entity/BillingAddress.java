@@ -1,7 +1,6 @@
 package com.personal.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,75 +12,74 @@ import javax.persistence.Table;
 @Table(name = "billingAddress")
 public class BillingAddress implements Serializable {
 
-	private static final long serialVersionUID = 1028098616457762743L;
+  private static final long serialVersionUID = 1028098616457762743L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int billingAddressId;
-	private String address;
-	private String city;
-	private String state;
-	private String zip;
-	private String country;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int billingAddressId;
 
-	@OneToOne(mappedBy = "billingAddress")
-	private User user;
+  private String address;
+  private String city;
+  private String state;
+  private String zip;
+  private String country;
 
-	public int getBillingAddressId() {
-		return billingAddressId;
-	}
+  @OneToOne(mappedBy = "billingAddress")
+  private User user;
 
-	public void setBillingAddressId(int billingAddressId) {
-		this.billingAddressId = billingAddressId;
-	}
+  public int getBillingAddressId() {
+    return billingAddressId;
+  }
 
-	public String getAddress() {
-		return address;
-	}
+  public void setBillingAddressId(int billingAddressId) {
+    this.billingAddressId = billingAddressId;
+  }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+  public String getAddress() {
+    return address;
+  }
 
-	public String getCity() {
-		return city;
-	}
+  public void setAddress(String address) {
+    this.address = address;
+  }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+  public String getCity() {
+    return city;
+  }
 
-	public String getState() {
-		return state;
-	}
+  public void setCity(String city) {
+    this.city = city;
+  }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+  public String getState() {
+    return state;
+  }
 
-	public String getZip() {
-		return zip;
-	}
+  public void setState(String state) {
+    this.state = state;
+  }
 
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
+  public String getZip() {
+    return zip;
+  }
 
-	public String getCountry() {
-		return country;
-	}
+  public void setZip(String zip) {
+    this.zip = zip;
+  }
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+  public String getCountry() {
+    return country;
+  }
 
-	public User getUser() {
-		return user;
-	}
+  public void setCountry(String country) {
+    this.country = country;
+  }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+  public User getUser() {
+    return user;
+  }
 
-	
+  public void setUser(User user) {
+    this.user = user;
+  }
 }

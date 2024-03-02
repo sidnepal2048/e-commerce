@@ -1,91 +1,81 @@
 package com.personal.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Product")
+@Table(name = "Product")
 public class Product {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="productId")
-	private int productId;
 
-	@Column(name="productName")
-	private String productName;
-	
-	@Column(name="productCategory")
-	private String productCategory;
-	
-	@Column(name="productDescription")
-	private String productDescription;
-	
-	@Column(name="stock")
-	private int stock;
-	
-	@Column(name="productPrice")
-	private double productPrice;
-	
-	
-	
-	public int getProductId() {
-		return productId;
-	}
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "productId")
+  private int productId;
 
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+  @Column(name = "productName")
+  private String productName;
 
-	public String getProductName() {
-		return productName;
-	}
+  @Column(name = "productCategory")
+  private String productCategory;
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+  @Column(name = "productDescription")
+  private String productDescription;
 
-	public String getProductCategory() {
-		return productCategory;
-	}
+  @Column(name = "stock")
+  private int stock;
 
-	public void setProductCategory(String productCategory) {
-		this.productCategory = productCategory;
-	}
+  @Column(name = "productPrice")
+  private double productPrice;
 
-	public String getProductDescription() {
-		return productDescription;
-	}
+  public int getProductId() {
+    return productId;
+  }
 
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
+  public void setProductId(int productId) {
+    this.productId = productId;
+  }
 
-	public int getStock() {
-		return stock;
-	}
+  public String getProductName() {
+    return productName;
+  }
 
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
 
-	public double getProductPrice() {
-		return productPrice;
-	}
+  public String getProductCategory() {
+    return productCategory;
+  }
 
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
-	}
+  public void setProductCategory(String productCategory) {
+    this.productCategory = productCategory;
+  }
 
-	
-	
+  public String getProductDescription() {
+    return productDescription;
+  }
+
+  public void setProductDescription(String productDescription) {
+    this.productDescription = productDescription;
+  }
+
+  public int getStock() {
+    return stock;
+  }
+
+  public void setStock(int stock) {
+    this.stock = stock;
+  }
+
+  public double getProductPrice() {
+    return productPrice;
+  }
+
+  public void setProductPrice(double productPrice) {
+    this.productPrice = productPrice;
+  }
 }
